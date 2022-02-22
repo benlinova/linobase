@@ -1,0 +1,53 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+  dependencies:
+    - linobase/fontawesome
+global-linova:
+  css:
+    theme:
+      css/global.css: {}
+      css/menus.css: {}
+fontawesome:
+  css:
+    theme:
+      https://use.fontawesome.com/releases/v6.0.0/css/all.css: {}      
+parallax:
+  version: 1.5
+  js:
+      libs/parallax/parallax.min.js: {}
+masonry:
+  version: 4.4.2
+  js:
+      libs/masonry/masonry.pkgd.min.js: {} 
+  dependencies:
+    - core/drupal
+    - core/jquery.once
+swiper:
+  version: 4.4.6
+  css:
+    theme:
+      libs/swiper/dist/css/swiper.min.css: {}
+  js:
+    libs/swiper/dist/js/swiper.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once    
+global-scripting:
+  version: 1.1
+  js:
+    js/linobase.custom.js: {}
+  dependencies:
+    - linobase/swiper
+    - linobase/masonry
+glightbox:
+  version: 3.1.0
+  css:
+    theme:
+      libs/glightbox/dist/css/glightbox.min.css: {}
+  js:
+    libs/glightbox/dist/js/glightbox.min.js: {}
+  dependencies:
+    - linobase/global-scripting   

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/*
+Fichier permettant un affichage optimité de ckeditor notamment lors de la création
+et modification d'un contenu si le thème du site est selectionné
+*/
+@media screen and (min-width: 768px) {
+  .ui-dialog--narrow.entity-select-dialog .entity-embed-dialog-step--select {
+    min-width: auto; } }
+@media screen and (min-width: 1000px) {
+  .ui-dialog--narrow.entity-select-dialog .entity-embed-dialog-step--select {
+    min-width: auto; } }
+@media screen and (min-width: 1200px) {
+  .ui-dialog--narrow.entity-select-dialog .entity-embed-dialog-step--select {
+    min-width: auto; } }
+.modal-body.ui-dialog-content {
+  overflow: visible !important; }
+
+/*# sourceMappingURL=editor.css.map */
