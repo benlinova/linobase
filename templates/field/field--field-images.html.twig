@@ -42,10 +42,11 @@
   set title_classes = [
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
+    set classes_wrapper = ['d-flex']
 %}
 
   {% if multiple %}
-    <div{{ attributes }}>
+    <div{{ attributes.addClass(classes_wrapper) }}>
       {% for item in items %}
         <div{{ item.attributes }}>{{ item.content }}</div>
       {% endfor %}

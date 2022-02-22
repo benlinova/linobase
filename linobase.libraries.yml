@@ -49,5 +49,6 @@ glightbox:
       libs/glightbox/dist/css/glightbox.min.css: {}
   js:
     libs/glightbox/dist/js/glightbox.min.js: {}
+    js/linobase.glightbox.js: {}
   dependencies:
     - linobase/global-scripting   
