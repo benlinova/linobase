@@ -1,27 +1,22 @@
-core: 8.x
+core_version_requirement: ^8 || ^9
 type: theme
-base theme: bootstrap
+base theme: linobase
 
-name: 'linobase SUBTHEME'
-description: 'Utilise le boostrap CDNjs et css'
+name: 'SUBTHEME'
+
 package: 'Bootstrap'
 
 regions:
   side_collapse: 'Barre latérale flottante'
-  navigation: 'Navigation'
+  header: Header
   header_right: 'Header Right'
-  navigation_collapsible: 'Navigation (Collapsible)'
-  navigation_admin: 'Navigation (Administration)'
-  header: 'Top Bar'
-  highlighted: 'Highlighted'
-  help: 'Help'
-  content: 'Content'
-  sidebar_first: 'Primary'
-  sidebar_second: 'Secondary'
-  pre_footer: 'Pre-Footer'
-  footer: 'Footer'
-  page_top: 'Page top'
-  page_bottom: 'Page bottom'
-
-libraries-override:
-    linobase/global-styling: SUBTHEME/global-styling
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  banner: 'Banner'
+  breadcrumb: Breadcrumbs
+  top_content: 'Au dessus du contenu'
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  pre_footer: PreFooter
+  footer: Footer
