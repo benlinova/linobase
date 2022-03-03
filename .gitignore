@@ -1,2 +1,4 @@
 # Ignore paths from netbeans
 /nbproject/*
+sftp-config.json
+/.sass-cache/*

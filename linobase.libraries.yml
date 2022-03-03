@@ -3,12 +3,18 @@ global-styling:
     theme:
       css/style.css: {}
   dependencies:
+    - bootstrap5/global-styling
     - linobase/fontawesome
+    - linobase/menus
+
 global-linova:
   css:
     theme:
       css/global.css: {}
-      css/menus.css: {}
+menus:
+  css:
+    theme:
+      css/menus.css: {}      
 fontawesome:
   css:
     theme:
@@ -28,9 +34,9 @@ swiper:
   version: 4.4.6
   css:
     theme:
-      libs/swiper/dist/css/swiper.min.css: {}
+      https://unpkg.com/swiper@8/swiper-bundle.min.css: {}
   js:
-    libs/swiper/dist/js/swiper.min.js: {}
+    https://unpkg.com/swiper@8/swiper-bundle.min.js: { type: external, minified: true }
   dependencies:
     - core/jquery
     - core/drupal

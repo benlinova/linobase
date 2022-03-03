@@ -79,8 +79,8 @@
         </h2>
         {{ title_suffix }}
 
-
+        {{ content.field_image }}
         <div class="swiper-desc">
-            {{ content }}
+            {{ content|without('field_image') }}
         </div>
 </article>

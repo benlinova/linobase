@@ -1,12 +1,12 @@
 @import 'compass/css3';
 @import 'variables.scss';
 @import 'animate.scss';
-@import 'swiper.scss';
-@import 'menus.scss';
+//@import 'swiper.scss';
 @import 'editor.scss';
 body{
     font-family: $font1;
     margin-top:0px;
+    height:100%;
 }
 h1,h2,h3{
     color:$color1;
@@ -281,4 +281,3 @@ div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-with
         border-bottom-left-radius:0px;
     }
 }
-

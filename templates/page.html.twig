@@ -148,18 +148,18 @@ set footer_classes = ' ' ~
 {% if page.banner %}
     <div class="banner-wrapper">
         {% block banner %}
-            <div class="{{ container }}" role="banner">
+            <div class="container" role="banner">
                 {{ page.banner }}
             </div>
         {% endblock %}
     </div>
 {% endif %}
-
+<i class="fa-solid fa-briefcase-medical"></i>
 {# topbar #}
 {% if page.top_content %}
     <div class="topbar-wrapper">
         {% block top_content %}
-            <div class="{{ container }}" role="heading">
+            <div class="container" role="heading">
                 {{ page.top_content }}
             </div>
         {% endblock %}
