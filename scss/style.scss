@@ -233,7 +233,6 @@ div.social-links{
     max-width:800px;
 }
 
-.grid-item--width2 { width: 400px;}
 
 div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {
     background: $color1;
@@ -280,4 +279,16 @@ div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-with
         border-top-left-radius:0px;
         border-bottom-left-radius:0px;
     }
+}
+
+
+/*** MASONRY **/
+.masonry-grid {
+  margin: 0 auto;
+}
+.gutter-sizer {
+  width: 1%;
+}
+.grid-item{
+    width: 125px;
 }

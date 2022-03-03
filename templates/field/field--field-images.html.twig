@@ -44,12 +44,15 @@
   ]
 %}
 {% 
-set classes_wrapper = ['d-flex']
+set classes_wrapper = ['masonry-grid']
 %}
+
+{{ attach_library('linobase/masonry') }}
   {% if multiple %}
     <div{{ attributes.addClass(classes_wrapper) }}>
+        <div class="gutter-sizer"></div>
       {% for item in items %}
-        <div{{ item.attributes }}>{{ item.content }}</div>
+        <div{{ item.attributes.addClass('grid-item') }}>{{ item.content }}</div>
       {% endfor %}
     </div>
   {% else %}

@@ -315,9 +315,6 @@ div.social-links ul.linkicon {
 .webform-submission-form {
   max-width: 800px; }
 
-.grid-item--width2 {
-  width: 400px; }
-
 div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {
   background: #33bcd8; }
 
@@ -353,5 +350,15 @@ div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-with
 #search-block-form input.form-submit {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px; }
+
+/*** MASONRY **/
+.masonry-grid {
+  margin: 0 auto; }
+
+.gutter-sizer {
+  width: 1%; }
+
+.grid-item {
+  width: 125px; }
 
 /*# sourceMappingURL=style.css.map */
