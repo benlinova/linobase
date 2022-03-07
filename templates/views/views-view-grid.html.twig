@@ -65,7 +65,7 @@
         
       <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
         {% for column in row.content %}
-          <div{{ column.attributes.addClass(classoffset,col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
+          <div{{ column.attributes.addClass(classoffset,col_classes, options.col_class_default ? 'col-n-' ~ loop.index) }}>
             {{- column.content -}}
           </div>
           {% set classoffset = '' %}
@@ -74,7 +74,7 @@
     {% endfor %}
   {% else %}
     {% for column in items %}
-      <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
+      <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-n-' ~ loop.index) }}>
         {% for row in column.content %}
             {{- row.content -}}
          
