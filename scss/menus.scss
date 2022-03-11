@@ -1,9 +1,9 @@
 @import 'variables.scss';
 
-nav.navbar{
+ul.navbar-nav{
     .dropdown-item.active,.dropdown-item:active{
         background:lighten($color1,20);
-    }
+    }    
     li {
         a,span {
             position:relative;
