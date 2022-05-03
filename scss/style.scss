@@ -14,7 +14,9 @@ h1,h2,h3{
         color:$color1;
     }
 }
-
+.glightbox-clean .gslide-description {
+    background:rgba(255,255,255,0.7);
+}
 a{
     color:$color1;
     transition: color  0.3s;

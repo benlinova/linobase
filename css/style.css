@@ -141,6 +141,9 @@ h1, h2, h3 {
   h1 a, h2 a, h3 a {
     color: #33bcd8; }
 
+.glightbox-clean .gslide-description {
+  background: rgba(255, 255, 255, 0.7); }
+
 a {
   color: #33bcd8;
   transition: color  0.3s; }
