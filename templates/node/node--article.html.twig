@@ -70,7 +70,7 @@
 {%
   set classes = [
     'node',
-    'row',
+    'nid-' ~ node.id,
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
@@ -80,34 +80,37 @@
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-        {% if content.field_image|render is not empty %}
-        <div class="col-md-4 col-sm-5">
-            {{ content.field_image }}
-        </div>
-        <div class="col-md-8 col-sm-7">
-    {% else %}
-        <div class="col-md-12 col-sm-12">
-    {% endif %}
-  {{ title_prefix }}
-  {% if label and not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
 
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Le {{ date }}{% endtrans %}
-        {{ metadata }}
+
+
+  <div class="visuel-cover">
+  
+    {{content.field_image}} 
+    <div class="visuel-cover-text">
+    {{ title_prefix }}
+    {% if label  %}
+      <h1{{ title_attributes }}>
+        {{ label }}
+      </h1>
+    {% endif %}
+    {{ title_suffix }}
+      {% if display_submitted %}
+      <div class="node__meta">
+        {{ author_picture }}
+        <div{{ author_attributes.addClass('node__submitted') }}>
+        {% set createdDate = node.getCreatedTime|date('U')|format_date('date_sans_heure') %}
+          {% trans %}Le {{ createdDate }}{% endtrans %}
+          {{ metadata }}
+        </div>
       </div>
-    </footer>
-  {% endif %}
+    {% endif %}
+    </div>
+  </div>
+
+
 
   <div{{ content_attributes.addClass('node__content') }}>
     {{ content|without('field_image') }}
   </div>
-  </div>
+
 </article>
