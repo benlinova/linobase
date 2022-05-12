@@ -1,4 +1,5 @@
-# Ignore paths from netbeans
+# Ignore paths from netbeans, visual etc...
 /nbproject/*
+/.vscode/*
 sftp-config.json
 /.sass-cache/*
