@@ -39,38 +39,38 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-SWIPPE
-<div class="row">
-    <div class="col-6">
-        <div class="swiper-container">
-            {{ exposed }}
-            {{ attachment_before }}
-            <div class="swiper-wrapper">
-                {{ rows }}
-                {{ empty }}
-                {{ pager }}
-            </div>
+<div class="swiper mySwiper">
+  {{ title_prefix }}
+  {{ title }}
+  {{ title_suffix }}
 
-            <div class="swiper-pagination"></div>
-            <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+  {% if header %}
+    <header>
+      {{ header }}
+    </header>
+  {% endif %}
 
-        </div> 
-    </div>
-    <div class="col-6">
-        {% if footer %}
-            <div class="swiper-one-desc">
-                {{ footer }}
-            </div>
-        {% endif %}
-    </div>
+  {{ exposed }}
+  {{ attachment_before }}
+  <div class="swiper-wrapper">
+  {{ rows }}
+  {{ empty }}
+  {{ pager }}
+  </div>
+  <div class="swiper-pagination"></div>
+  <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  
+
+  {{ attachment_after }}
+  {{ more }}
+
+  {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+  {% endif %}
+
+  {{ feed_icons }}
 </div>
-
-
-{{ attachment_after }}
-{{ more }}
-
-
-
-{{ feed_icons }}
