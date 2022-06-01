@@ -31,46 +31,28 @@
  *
  * @ingroup themeable
  */
-#}
-
-{{ attach_library('linobase/linobaseSwiper') }}
+#} {{ attach_library('linobase/linobaseSwiper') }}
 {%
   set classes = [
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-<div class="swiper mySwiper">
-  {{ title_prefix }}
-  {{ title }}
-  {{ title_suffix }}
+<div class="swiper-view-wrapper"> 
+	{{ title_prefix }}
+	{{ title }} 
+	{{ title_suffix }} 
+	{{ exposed }} 
+	{{ attachment_before }}
+	{{ rows }} {{ empty }} {{ pager }}
+	
+	{% if header %}
+		<div class="swiper-header"> 
+            {{ header }}
+		</div>
+	{% endif %}
 
-  {% if header %}
-    <header>
-      {{ header }}
-    </header>
-  {% endif %}
-
-  {{ exposed }}
-  {{ attachment_before }}
-  <div class="swiper-wrapper">
-  {{ rows }}
-  {{ empty }}
-  {{ pager }}
-  </div>
-  <div class="swiper-pagination"></div>
-  <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  
-
-  {{ attachment_after }}
-  {{ more }}
-
-  {% if footer %}
-    <footer>
-      {{ footer }}
-    </footer>
-  {% endif %}
-
-  {{ feed_icons }}
+	{% if footer %}
+		<footer> {{ footer }}
+		</footer>
+	{% endif %} {{ feed_icons }}
 </div>
