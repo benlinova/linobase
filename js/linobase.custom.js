@@ -22,8 +22,8 @@
             $('.masonry-grid').masonry({
 //                columnWidth: 200,
                 itemSelector: '.grid-item',
-                gutter: '.gutter-sizer',
-                fitWidth: true
+                //gutter: '.gutter-sizer',
+                //fitWidth: true
             });
             
 
