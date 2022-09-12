@@ -26,7 +26,7 @@
  * @ingroup themeable
  */
 #}
-{% set colmd = 12/options.columns | floor %}
+{% set colmd = 12//options.columns %}
 {%
   set classes = [
     'views-view-grid',
@@ -60,7 +60,7 @@
     {% for row in items %}
         {% set nbitems = row.content|length %}
         {% set offset = (12-(colmd*nbitems))/2 %}
-        {% set classoffset = 'col-md-offset-'~offset|round %}
+        {% set classoffset = 'offset-md'~offset|round %}
         
       <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
         {% for column in row.content %}
