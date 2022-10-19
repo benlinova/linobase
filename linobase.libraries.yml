@@ -18,7 +18,7 @@ menus:
 fontawesome:
   css:
     theme:
-      https://use.fontawesome.com/releases/v6.0.0/css/all.css: {}      
+      https://use.fontawesome.com/releases/v6.2.0/css/all.css: {}      
 parallax:
   version: 1.5
   js:
