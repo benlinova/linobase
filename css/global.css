@@ -39,10 +39,10 @@ img.align-left {
   margin-right: 10px;
 }
 
-div.text-formatted ul {
+div.field--type-text-long ul {
   line-height: 2rem;
 }
-div.text-formatted img {
+div.field--type-text-long img {
   max-width: 100%;
   height: auto;
 }/*# sourceMappingURL=global.css.map */
