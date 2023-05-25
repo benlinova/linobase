@@ -1,6 +1,6 @@
 {
     "name": "benlinova/linobase",
     "type": "drupal-theme",
-    "description": "Drupal 9 theme",
-    "version" : "1.0.1"
+    "description": "Drupal 10 theme",
+    "version" : "1.0.3"
 }
