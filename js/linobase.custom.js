@@ -14,10 +14,3 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-// jQuery
-$(".masonry-grid").masonry({
-  //                columnWidth: 200,
-  itemSelector: ".grid-item",
-  //gutter: '.gutter-sizer',
-  //fitWidth: true
-})

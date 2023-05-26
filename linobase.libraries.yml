@@ -27,9 +27,9 @@ masonry:
   version: 4.4.2
   js:
       libs/masonry/masonry.pkgd.min.js: {} 
+      js/linobase.masonry.js: {}
   dependencies:
     - core/drupal
-    - core/once
 swiper:
   version: 4.4.6
   css:
@@ -47,7 +47,6 @@ global-scripting:
     js/linobase.custom.js: {}
   dependencies:
     - linobase/swiper
-    - linobase/masonry
 glightbox:
   version: 3.1.0
   css:
