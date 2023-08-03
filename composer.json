@@ -1,5 +1,6 @@
 {
     "name": "benlinova/linobase",
     "type": "drupal-theme",
-    "description": "Drupal 10 theme for Linova sites"
+    "description": "Drupal 10 theme for Linova sites",
+    "version": "1.0.7"
 }
