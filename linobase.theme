@@ -9,7 +9,7 @@
 function linobase_preprocess_links(&$variables) {
   if (isset($variables['links']['node-readmore'])) {
     $variables['links']['node-readmore']['link']['#options']['attributes']['class'][] = 'btn btn-primary';
-    $icon = '<i class="fas fa-caret-right"></i>';
+    $icon = ' <i class="fa-solid fa-circle-chevron-right"></i>';
     $link_content = $variables['links']['node-readmore']['link']['#title'];
 
     $formattedIcon = \Drupal\Core\Render\Markup::create( $link_content.$icon);
