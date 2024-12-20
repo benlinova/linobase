@@ -2,11 +2,11 @@ global-styling:
   css:
     theme:
       css/style.css: {}
+      css/animate.min.css: {}
   dependencies:
     - bootstrap5/global-styling
     - linobase/fontawesome
-    - linobase/menus
-
+    - linobase/menus  
 global-linova:
   css:
     theme:
@@ -19,10 +19,11 @@ fontawesome:
   css:
     theme:
       https://use.fontawesome.com/releases/v6.2.0/css/all.css: {}      
-parallax:
-  version: 1.5
+gsap:
   js:
-      libs/parallax/parallax.min.js: {}
+    'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js': {type: external}
+    'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js': {type: external}
+    'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js': {type: external}  
 masonry:
   version: 4.4.2
   js:
@@ -35,6 +36,7 @@ swiper:
   css:
     theme:
       https://unpkg.com/swiper@8/swiper-bundle.min.css: {}
+      css/swiper.css: {}
   js:
     https://unpkg.com/swiper@8/swiper-bundle.min.js: { type: external, minified: true }
   dependencies:

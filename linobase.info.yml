@@ -5,8 +5,8 @@ base theme: bootstrap5
 name: 'Linobase'
 description: 'Utilise le boostrap CDNjs et css'
 package: 'Bootstrap'
-ckeditor_stylesheets:
-  - css/ckeditor.css
+ckeditor5-stylesheets:
+  - css/style.css
 regions:
   side_collapse: 'Barre latérale flottante'
   header: Header
@@ -16,7 +16,9 @@ regions:
   banner: 'Banner'
   breadcrumb: Breadcrumbs
   top_content: 'Au dessus du contenu'
+  content_full_width: 'Contenu sur toute la largeur'
   content: 'Main content'
+  home_content: 'Main content on homepage only'
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
   pre_footer: PreFooter

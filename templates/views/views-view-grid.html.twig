@@ -33,6 +33,8 @@
     options.alignment,
     'cols-' ~ options.columns,
     'clearfix',
+    'container',
+    b5_top_container
   ]
 %}
 {% if options.row_class_default %}
@@ -48,6 +50,7 @@
   {%
     set col_classes = [
       'col-md-'~colmd,
+      'mt-2',
       options.alignment == 'vertical' ? 'clearfix',
     ]
   %}

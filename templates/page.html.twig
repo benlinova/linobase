@@ -57,11 +57,11 @@ set footer_classes = ' ' ~
 %}
 {% if page.side_collapse  %}
     
-    <div class="side-collapse-wrapper">
-        <button class="btn btn-primary collapse-btn-horizontal" data-bs-toggle="collapse" data-bs-target="#sideCollapse" role="button" aria-expanded="true" aria-controls="sideCollapse">
+    <div class="side-collapse-wrapper ">
+        <button class="btn btn-primary collapse-btn-horizontal shadow-lg" data-bs-toggle="collapse" data-bs-target="#sideCollapse" role="button" aria-expanded="false" aria-controls="sideCollapse">
             <i class="fa-solid fa-caret-left"></i>
         </button>
-        <div class="collapse collapse-horizontal show side-collapse" id="sideCollapse">
+        <div class="collapse collapse-horizontal hide side-collapse shadow-lg" id="sideCollapse">
             {{ page.side_collapse }}
         </div>
     </div>
@@ -102,48 +102,7 @@ set footer_classes = ' ' ~
     {% endif %}
 
 </header>
-{# Navbar Backoffice #}
-{% if page.navigation_admin  %}
-    {% block navbar_admin %}
-        {%
-      set navadmin_classes = [
-        'navbar',
-        'navbar-inverse',
-        theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
-      ]
-        %}
 
-        <header{{ navbar_attributes.addClass(navadmin_classes) }} id="navadmin" role="banner">
-            {% if not navbar_attributes.hasClass(container) %}
-                <div class="{{ container }}">
-                {% endif %}
-
-                <div class="navbar-header">
-                    <div class="navbar-brand">
-                        <span class="glyphicon glyphicon-lock"></span>
-                    </div>
-                    {# .btn-navbar is used as the toggle for collapsed navbar content #}
-
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-admin">
-                        <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                </div>
-
-                {# Navigation (collapsible) #}
-
-                <div id="navbar-admin" class="navbar-collapse collapse">
-                    {{ page.navigation_admin }}
-                </div>
-                {% if not navbar_attributes.hasClass(container) %}
-                </div>
-            {% endif %}
-        </header>
-    {% endblock %}
-{% endif %}
 {# topbar #}
 {% if page.banner %}
     <div class="banner-wrapper">
@@ -180,8 +139,18 @@ set footer_classes = ' ' ~
   set content_classes = (page.sidebar_first and page.sidebar_second) ? 'col-12 col-lg-6' : ((page.sidebar_first or page.sidebar_second) ? 'col-12 col-lg-9' : 'col-12' )
     %}
 
+    {% if page.content_full_width %}
+        <div class="container-fluid p-0">
+            {{ page.content_full_width }}
+        </div>
+    {% endif %}
 
-    <div class="{{ b5_top_container }}">
+    {% if is_front %}
+        <div class="container-fluid p-0">
+    {% else %}
+        <div class="{{ b5_top_container }}">
+    {% endif %}
+   
         <div class="row g-0">
             {% if page.sidebar_first %}
                 <div class="sidebar bg-light order-2 order-lg-1 {{ sidebar_first_classes }}">
@@ -193,6 +162,8 @@ set footer_classes = ' ' ~
                     {{ page.breadcrumb }}
                 {% endif %}
                 {{ page.content }}
+
+                
             </div>
             {% if page.sidebar_second %}
                 <div class="order-3 {{ sidebar_second_classes }}">
@@ -201,7 +172,11 @@ set footer_classes = ' ' ~
             {% endif %}
         </div>
     </div>
-
+        {% if is_front %}
+        <div class="container-fluid p-0">
+            {{ page.home_content }}
+        </div>
+    {% endif %}
 </main>
 {% if page.pre_footer %}
     {% block pre_footer %}

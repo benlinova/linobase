@@ -45,4 +45,11 @@ div.field--type-text-long ul {
 div.field--type-text-long img {
   max-width: 100%;
   height: auto;
+}
+
+div.field--type-text-long img,
+div.form-type-processed-text img,
+div.field--type-text-with-summary img {
+  max-width: 100%;
+  height: auto;
 }/*# sourceMappingURL=global.css.map */

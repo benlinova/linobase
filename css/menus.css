@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 ul.navbar-nav .dropdown-item.active, ul.navbar-nav .dropdown-item:active {
-  background: #89d8e8;
+  background: #1a7897;
 }
 ul.navbar-nav li a, ul.navbar-nav li span {
+  font-size: 1.2rem;
   position: relative;
 }
 ul.navbar-nav li a::before, ul.navbar-nav li span::before {
@@ -11,7 +12,7 @@ ul.navbar-nav li a::before, ul.navbar-nav li span::before {
   left: 0;
   width: 100%;
   height: 1px;
-  background: #33bcd8;
+  background: #0b3340;
   content: "";
   opacity: 0;
   -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;

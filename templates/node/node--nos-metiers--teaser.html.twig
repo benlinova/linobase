@@ -67,20 +67,36 @@
  *
  */
 #}
-{% set classes = ['node', 'nid-' ~ node.id, 'node--type-' ~ (node.bundle|clean_class), node.isPromoted() ? 'node--promoted', node.isSticky() ? 'node--sticky', not node.isPublished() ? 'node--unpublished', view_mode ? 'node--view-mode-' ~ (view_mode|clean_class)] %}
+{% set classes = [
+  'node',
+  'shadow-lg', 
+  'nid-' ~ node.id, 
+  'color-inverse',
+  'node--type-' ~ (node.bundle|clean_class),
+   node.isPromoted() ? 'node--promoted', 
+   node.isSticky() ? 'node--sticky', 
+   not node.isPublished() ? 'node--unpublished', 
+   view_mode ? 'node--view-mode-' ~ (view_mode|clean_class)
+   ] 
+%}
 <article {{ attributes.addClass(classes) }}>
-      {% if display_submitted %}
-        <div class="node__meta">
-          {{ author_picture }}
-          <div {{ author_attributes.addClass('node__submitted') }}>
-            {% set createdDate = node.getCreatedTime|date('U')|format_date('date_sans_heure') %}
-            {% trans %}Le {{ createdDate }}{% endtrans %}
-            {{ metadata }}
-          </div>
-        </div>
-      {% endif %}
+  {% if display_submitted %}
+    <footer class="node__meta">
+      {{ author_picture }}
+      <div {{ author_attributes.addClass('node__submitted') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
 
-  <div class="container">
-    <div {{ content_attributes.addClass('node__content') }}>{{ content|without('field_image') }}</div>
+  <div {{ content_attributes.addClass('node__content') }}>
+    {{ content.field_icone }}
+    {{ title_prefix }}
+    {% if label and not page %}
+      <h4 {{ title_attributes }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h4>
+    {% endif %} 
+    {{ title_suffix }}
+    {{ content|without('field_icone') }}
   </div>
 </article>

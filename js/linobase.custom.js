@@ -9,7 +9,7 @@ Drupal.behaviors.initJSLinobase = {
         swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
         autoplay: {
-          delay: 2500,
+          delay: 25000,
           disableOnInteraction: false,
         },
         navigation: {
@@ -20,8 +20,33 @@ Drupal.behaviors.initJSLinobase = {
           el: ".swiper-pagination",
           clickable: true,
         },
-      })
 
+      })
+      //*** parralax */
+      gsap.utils.toArray(".parallax").forEach((section, i) => {
+        
+        section.bg = section.querySelector(".paragraph--type--section");
+
+        // Give the backgrounds some random images
+        //section.bg.style.backgroundImage = `url(https://picsum.photos/${innerWidth}/${innerHeight}?random=${i})`;
+
+        // Do the parallax effect on each section
+        if (i>=0) {
+          console.log(i);
+          
+
+          gsap.to(section.bg, {
+            backgroundPosition: `50% 100%`,
+            ease: "none",
+
+            scrollTrigger: {
+              trigger: section,
+              scrub: true,
+              markers: true,
+            },
+          });
+        }
+      });
     });
   },
 };

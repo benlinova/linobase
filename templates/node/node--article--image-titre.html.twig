@@ -69,18 +69,14 @@
 #}
 {% set classes = ['node', 'nid-' ~ node.id, 'node--type-' ~ (node.bundle|clean_class), node.isPromoted() ? 'node--promoted', node.isSticky() ? 'node--sticky', not node.isPublished() ? 'node--unpublished', view_mode ? 'node--view-mode-' ~ (view_mode|clean_class)] %}
 <article {{ attributes.addClass(classes) }}>
-      {% if display_submitted %}
-        <div class="node__meta">
-          {{ author_picture }}
-          <div {{ author_attributes.addClass('node__submitted') }}>
-            {% set createdDate = node.getCreatedTime|date('U')|format_date('date_sans_heure') %}
-            {% trans %}Le {{ createdDate }}{% endtrans %}
-            {{ metadata }}
-          </div>
-        </div>
+  <div class="visuel-cover">
+    {{ content.field_image }}
+    <div class="visuel-cover-text">
+      {{ title_prefix }}
+      {% if label %}
+        <h1 {{ title_attributes }}>{{ label }}</h1>
       {% endif %}
-
-  <div class="container">
-    <div {{ content_attributes.addClass('node__content') }}>{{ content|without('field_image') }}</div>
+      {{ title_suffix }}
+    </div>
   </div>
 </article>

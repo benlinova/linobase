@@ -6,6 +6,7 @@ ul.navbar-nav{
     }    
     li {
         a,span {
+            font-size: 1.2rem;
             position:relative;
         }
         a::before,span::before {

@@ -1,10 +1,8 @@
 // vanilla JS
 var msnry = new Masonry(".masonry-grid", {
-        //                columnWidth: 200,
-        itemSelector: ".grid-item",
-        //gutter: '.gutter-sizer',
-        //fitWidth: true
-      });
-      
-      
-      
+  columnWidth: 350,
+  gutter: 20,
+  itemSelector: ".grid-item",
+  //gutter: '.gutter-sizer',
+  fitWidth: true,
+});
