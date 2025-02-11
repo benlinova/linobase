@@ -43,6 +43,7 @@ $color1Ulight: scale-color($color1, $lightness: 70%);
   --bs-btn-disabled-border-color: #0d6efd;
   position: relative;
   i{
+    margin-left:4px;
     transition: all 0.65s;
   }
   &:hover{

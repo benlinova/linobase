@@ -1,12 +1,7 @@
 Drupal.behaviors.initJSLinobase = {
   attach: function (context, settings) {
-    // Use context to filter the DOM to only the elements of interest,
-    // and use once() to guarantee that our callback function processes
-    // any given element one time at most, regardless of how many times
-    // the behaviour itself is called (it is not sufficient in general
-    // to assume an element will only ever appear in a single context).
     once("initJSLinobase", "html").forEach(function (element) {
-        swiper = new Swiper(".mySwiper", {
+      swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
         autoplay: {
           delay: 25000,
@@ -20,20 +15,17 @@ Drupal.behaviors.initJSLinobase = {
           el: ".swiper-pagination",
           clickable: true,
         },
-
-      })
+      });
       //*** parralax */
       gsap.utils.toArray(".parallax").forEach((section, i) => {
-        
         section.bg = section.querySelector(".paragraph--type--section");
 
         // Give the backgrounds some random images
         //section.bg.style.backgroundImage = `url(https://picsum.photos/${innerWidth}/${innerHeight}?random=${i})`;
 
         // Do the parallax effect on each section
-        if (i>=0) {
+        if (i >= 0) {
           console.log(i);
-          
 
           gsap.to(section.bg, {
             backgroundPosition: `50% 100%`,
@@ -42,11 +34,50 @@ Drupal.behaviors.initJSLinobase = {
             scrollTrigger: {
               trigger: section,
               scrub: true,
-              markers: true,
+              //markers: true,
             },
           });
         }
       });
+
+      gsap.utils.toArray(".gsFade").forEach((fade, i) => {
+        gsap.set(fade, {
+          opacity: 0,
+          y: +300,
+        });
+
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: fade,
+              start: "20% bottom",
+
+              scrub: false,
+              markers: true,
+              toggleActions: "play reverse play reverse",
+            },
+          });
+          var duration = (Math.random()*5+5)/10;
+          tl.to(fade, { opacity: 1, y: 0, duration: duration });
+
+        //   tl.to(".fade", { opacity: 1, y: 0, duration: 0.5 });
+      });
+      // Gestion des fadein avec gsap
+      //   gsap.set(".fade", {
+      //     opacity: 0,
+      //     y: +300,
+      //   });
+      //   const tl = gsap.timeline({
+      //     scrollTrigger: {
+      //       trigger: ".fade",
+      //       start: "center bottom",
+
+      //       scrub: false,
+      //       markers: true,
+      //       toggleActions: "play reverse play reverse",
+      //     },
+      //   });
+
+      //   tl.to(".fade", { opacity: 1, y: 0, duration: 0.5 });
     });
   },
 };
