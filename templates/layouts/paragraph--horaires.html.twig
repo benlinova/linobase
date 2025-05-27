@@ -49,14 +49,15 @@
 {% block paragraph %}
     <div{{ attributes.addClass(classes) }}>
         {% block content %}
-            <div class="row">
-                <div class="col-sm-8  align-self-center mb-3">
-                    {{ content.field_texte }}
+            <div class="d-flex flex-columns mb-1">
+                  <div class="badge text-bg-secondary">
+                    {{ content.field_jours }}
                 </div>
-                <div class="col-sm-4 align-self-center mb-3">
-                    {{ content.field_image }}
+                <div class="ms-4">
+                    {{ content.field_heures }}
                 </div>
-            </div>
+               </div> 
+            
         {% endblock %}
     </div>
 {% endblock paragraph %}

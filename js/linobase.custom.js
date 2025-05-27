@@ -46,18 +46,40 @@ Drupal.behaviors.initJSLinobase = {
           y: +300,
         });
 
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: fade,
-              start: "20% bottom",
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: fade,
+            start: "20% bottom",
 
-              scrub: false,
-              markers: true,
-              toggleActions: "play reverse play reverse",
-            },
-          });
-          var duration = (Math.random()*5+5)/10;
-          tl.to(fade, { opacity: 1, y: 0, duration: duration });
+            scrub: false,
+            markers: true,
+            toggleActions: "play none none none",
+          },
+        });
+        var duration = (Math.random() * 5 + 5) / 10;
+        tl.to(fade, { opacity: 1, y: 0, duration: duration });
+
+        //   tl.to(".fade", { opacity: 1, y: 0, duration: 0.5 });
+      });
+
+      gsap.utils.toArray(".gsFadeFromLeft").forEach((fade, i) => {
+        gsap.set(fade, {
+          opacity: 0,
+          y: +300,
+        });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: fade,
+            start: "20% bottom",
+
+            scrub: false,
+            markers: true,
+            toggleActions: "play reverse play reverse",
+          },
+        });
+        var duration = 0.5;
+        tl.to(fade, { opacity: 1, y: 0, duration: duration });
 
         //   tl.to(".fade", { opacity: 1, y: 0, duration: 0.5 });
       });
@@ -78,6 +100,15 @@ Drupal.behaviors.initJSLinobase = {
       //   });
 
       //   tl.to(".fade", { opacity: 1, y: 0, duration: 0.5 });
+
+
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
+    // FIN DE LINSTANCIATION POUR DRUPAL
     });
   },
 };

@@ -57,12 +57,12 @@
   {% if multiple %}
     <div{{ attributes.addClass(classes, 'field--items') }}>
       {% for item in items %}
-        <div{{ item.attributes.addClass('field--item') }}><i class="fas fa-phone "></i> {{ item.content }}</div>
+        <div{{ item.attributes.addClass('field--item') }}><i class="fas fa-location-dot "></i> {{ item.content }}</div>
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes, 'field--item') }}><i class="fas fa-phone "></i> {{ item.content }}</div>
+      <div{{ attributes.addClass(classes, 'field--item') }}><i class="fas fa-location-dot "></i> {{ item.content }}</div>
     {% endfor %}
   {% endif %}
 {% else %}
@@ -72,7 +72,7 @@
       <div class="field--items">
     {% endif %}
     {% for item in items %}
-      <div{{ item.attributes.addClass('field--item') }}><i class="fas fa-phone"></i> {{ item.content }}</div>
+      <div{{ item.attributes.addClass('field--item') }}><i class="fas fa-location-dot"></i> {{ item.content }}</div>
     {% endfor %}
     {% if multiple %}
       </div>

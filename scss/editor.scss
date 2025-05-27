@@ -1,9 +1,8 @@
 /*
 Fichier permettant un affichage optimité de ckeditor notamment lors de la création
 et modification d'un contenu si le thème du site est selectionné
+mettre ici les éléments de texte
 */
-
-
 @media screen and (min-width: 768px) {
   .ui-dialog--narrow.entity-select-dialog .entity-embed-dialog-step--select {
     min-width: auto; // 95%
@@ -23,4 +22,37 @@ et modification d'un contenu si le thème du site est selectionné
 }
 .modal-body.ui-dialog-content{
     overflow: visible !important;
+}
+body{
+    font-family: $font1;
+}
+a {
+  color: $color1;
+  transition: color 0.3s;
+  &:hover {
+    color: darken($color1, 20);
+  }
+}
+
+ul.list-plus,
+ul.list-location {
+  li {
+    h2,
+    h3,
+    h4,
+    h5 {
+      display: inline;
+    }
+    list-style: none;
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 1em;
+      width: 1em;
+      background-image: url("../img/location.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-left: 1.5em;
+    }
+  }
 }

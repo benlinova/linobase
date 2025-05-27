@@ -42,6 +42,7 @@
 {%
   set classes = [
     'paragraph',
+    
     'paragraph-id-'~paragraph.id()|t,
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -52,7 +53,7 @@
 <div class="parallax">
     <div{{ attributes.addClass(classes) }}>
         <div class="bg">{{ content.field_image }}</div>
-        <div class="section-content">
+        <div class="section-content gsFade">
             {{ content|without('field_image') }}
         </div>        
     </div>

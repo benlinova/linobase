@@ -70,39 +70,37 @@ set footer_classes = ' ' ~
     <div class="container">
         {% if page.header_right  %}
             <div class="row">
-                <div class="col-8">
+                <div class="col-md-8">
                 {% endif %} 
                 {{ page.header }}
                 {% if page.header_right  %}
                 </div><!-- .col-8 -->
-                <div class="col-4">
+                <div class="col-md-4">
                     {{ page.header_right }}
                 </div>
             </div><!-- .row -->
         {% endif %} 
 
     </div>
-
-    {% if page.nav_branding or page.nav_main  %}
-
-        <nav class="{{ nav_classes }}">
-            <div class="{{ b5_top_container }} d-flex">
-                {{ page.nav_branding }}
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-md-center flex-wrap" id="navbarSupportedContent">
-                    {{ page.nav_main }}
-                </div>
-            </div>
-        </nav>
-    {% endif %}
-
 </header>
+    {% if page.nav_branding or page.nav_main  %}
+        <div class="sticky-top">
+            <nav class="{{ nav_classes }}">
+                <div class="{{ b5_top_container }} d-flex">
+                    {{ page.nav_branding }}
+                    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
+                    <div class="collapse navbar-collapse justify-content-md-center flex-wrap" id="navbarSupportedContent">
+                        {{ page.nav_main }}
+                    </div>
+                </div>
+            </nav>
+        </div>
+    {% endif %}
 {# topbar #}
 {% if page.banner %}
     <div class="banner-wrapper">

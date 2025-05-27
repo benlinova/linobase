@@ -3,6 +3,7 @@
 /*
 Fichier permettant un affichage optimité de ckeditor notamment lors de la création
 et modification d'un contenu si le thème du site est selectionné
+mettre ici les éléments de texte
 */
 @media screen and (min-width: 768px) {
   .ui-dialog--narrow.entity-select-dialog .entity-embed-dialog-step--select {
@@ -21,6 +22,45 @@ et modification d'un contenu si le thème du site est selectionné
 }
 .modal-body.ui-dialog-content {
   overflow: visible !important;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+a {
+  color: #0b3340;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+a:hover {
+  color: black;
+}
+
+ul.list-plus li,
+ul.list-location li {
+  list-style: none;
+}
+ul.list-plus li h2,
+ul.list-plus li h3,
+ul.list-plus li h4,
+ul.list-plus li h5,
+ul.list-location li h2,
+ul.list-location li h3,
+ul.list-location li h4,
+ul.list-location li h5 {
+  display: inline;
+}
+ul.list-plus li::before,
+ul.list-location li::before {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  background-image: url("../img/location.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 1.5em;
 }
 
 :root {
@@ -73,9 +113,8 @@ et modification d'un contenu si le thème du site est selectionné
 
 body {
   background-color: #dbdbdb;
-  font-family: "Outfit", sans-serif;
   margin-top: 0px;
-  height: 100%;
+  height: auto;
 }
 
 h1 {
@@ -113,15 +152,6 @@ h2.title:before, h2.title:after {
 
 .glightbox-clean .gslide-description {
   background: rgba(255, 255, 255, 0.7);
-}
-
-a {
-  color: #0b3340;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-a:hover {
-  color: black;
 }
 
 body:not(.path-frontpage) div.main-wrapper {
@@ -250,35 +280,25 @@ article.node-teaser h2 {
   display: none;
 }
 
-div.side-collapse-wrapper {
-  top: 200px;
-  position: fixed;
-  z-index: 1000;
-}
-div.side-collapse-wrapper .collapse-btn-horizontal {
-  border-bottom-left-radius: 0px;
-  border-top-left-radius: 0px;
-}
-
 div.social-links ul.linkicon {
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
-  -webkit-box-shadow: 0px 0px 5px #666;
-          box-shadow: 0px 0px 5px #666;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   list-style: none;
-  width: 70px;
   margin: 0px;
   padding: 0px;
 }
 div.social-links ul.linkicon li {
-  margin: 0;
+  -webkit-box-shadow: 0px 0px 5px #666;
+          box-shadow: 0px 0px 5px #666;
+  margin: 10px;
   padding: 0;
 }
 div.social-links ul.linkicon li a {
@@ -294,10 +314,36 @@ div.social-links ul.linkicon li a {
 div.social-links ul.linkicon li a:hover {
   background-color: #041014;
 }
-div.social-links ul.linkicon li:first-child a {
+
+div.side-collapse-wrapper {
+  top: 200px;
+  position: fixed;
+  z-index: 1000;
+}
+div.side-collapse-wrapper .collapse-btn-horizontal {
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+}
+div.side-collapse-wrapper div.social-links ul.linkicon {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px #666;
+          box-shadow: 0px 0px 5px #666;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70px;
+}
+div.side-collapse-wrapper div.social-links ul.linkicon li {
+  margin: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+div.side-collapse-wrapper div.social-links ul.linkicon li:first-child a {
   border-top-right-radius: 5px;
 }
-div.social-links ul.linkicon li:last-child a {
+div.side-collapse-wrapper div.social-links ul.linkicon li:last-child a {
   border-bottom-right-radius: 5px;
 }
 
@@ -512,12 +558,13 @@ article.node--type-nos-metiers .field--name-field-icone {
 article.node--type-nos-metiers .field--name-field-icone svg {
   padding: 30px;
   fill: #45d2cd;
-  max-width: 500px;
+  max-width: 100%;
 }
 
 /* SECTION */
 .paragraph--type--section {
   height: 100%;
+  background-position: 50% 0%;
   position: relative;
 }
 .paragraph--type--section .section-content {
@@ -545,7 +592,7 @@ article.node--type-nos-metiers .field--name-field-icone svg {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   padding: 30px 20px;
-  max-width: 80vw;
+  max-width: 80%;
 }
 
 a.effect-hover,

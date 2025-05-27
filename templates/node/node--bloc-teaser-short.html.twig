@@ -67,31 +67,19 @@
  *
  */
 #}
-{% set classes = ['node', 'nid-' ~ node.id, 'color-inverse', 'node--type-' ~ (node.bundle|clean_class), node.isPromoted() ? 'node--promoted', node.isSticky() ? 'node--sticky', not node.isPublished() ? 'node--unpublished', view_mode ? 'node--view-mode-' ~ (view_mode|clean_class)] %}
-<article {{ attributes.addClass(classes) }}>
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div {{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
-  <div {{ content_attributes.addClass('node__content') }}>
-    <div class="row">
-      <div class="col-12 col-md-6 col-sm-8 offset-lg-1 d-flex align-items-center">
-        {{ title_prefix }}
-        {% if label and not page %}
-          <h4 {{ title_attributes }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h4>
-        {% endif %}
-        {{ title_suffix }}
-
-        {{ content.body }}
-      </div>
-      <div class="col-12 offset-md-1 col-sm-4 col-md-4">{{ content.field_icone }}</div>
-    </div>
-      {{ content|without('field_icone','body') }}
+{%
+  set classes = [
+    'node',
+    'nid-' ~ node.id,
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content }}
   </div>
 </article>
